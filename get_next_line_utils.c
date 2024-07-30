@@ -6,7 +6,7 @@
 /*   By: gonische <gonische@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 17:23:07 by gonische          #+#    #+#             */
-/*   Updated: 2024/07/29 13:59:50 by gonische         ###   ########.fr       */
+/*   Updated: 2024/07/30 13:23:18 by gonische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	*ft_calloc(size_t count, size_t size)
 	return ((void *)result);
 }
 
-t_node *ft_get_new_node(char *data)
+t_node_list	*ft_get_new_node(char *data)
 {
-	t_node	*result;
+	t_node_list	*result;
 
-	result = (t_node *)ft_calloc(1, sizeof(t_node));
+	result = (t_node_list *)ft_calloc(1, sizeof(t_node_list));
 	if (!result)
 		return (NULL);
 	if (data)
@@ -58,7 +58,7 @@ size_t	ft_strlen(const char *str)
 		return (0);
 	result = 0;
 	while (str[result])
-		result++;		
+		result++;
 	return (result);
 }
 

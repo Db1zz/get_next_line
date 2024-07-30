@@ -6,22 +6,22 @@
 /*   By: gonische <gonische@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 16:45:20 by gonische          #+#    #+#             */
-/*   Updated: 2024/07/29 12:44:47 by gonische         ###   ########.fr       */
+/*   Updated: 2024/07/30 13:22:30 by gonische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10
-#endif // BUFFER_SIZE
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif // BUFFER_SIZE
 
-#ifndef LINE_DATA_SIZE
-#define LINE_DATA_SIZE 1024
-#endif // LINE_DATA_SIZE
+# ifndef LINE_DATA_SIZE
+#  define LINE_DATA_SIZE 1024
+# endif // LINE_DATA_SIZE
 
-#include <stdlib.h>
+# include <stdlib.h>
 
 typedef struct t_data
 {
@@ -31,16 +31,16 @@ typedef struct t_data
 	int		last_fd;
 }	t_data;
 
-typedef	struct	t_node
+typedef struct t_node_list
 {
-	char			*data;
-	struct t_node	*next;
-}	t_node;
+	char				*data;
+	struct t_node_list	*next;
+}	t_node_list;
 
-void	*ft_calloc(size_t count, size_t size);
-size_t	ft_strlen(const char *str);
-t_node *ft_get_new_node(char *data);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-char	*get_next_line(int fd);
+void		*ft_calloc(size_t count, size_t size);
+size_t		ft_strlen(const char *str);
+t_node_list	*ft_get_new_node(char *data);
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
+char		*get_next_line(int fd);
 
 #endif // GET_NEXT_LINE_H
